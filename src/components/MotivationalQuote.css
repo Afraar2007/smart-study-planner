@@ -1,0 +1,55 @@
+.motivational-quote {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.quote-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.quote-text {
+  margin: 0;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-style: italic;
+  flex: 1;
+  line-height: 1.6;
+}
+
+.btn-new-quote {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.btn-new-quote:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+  .quote-content {
+    flex-direction: column;
+  }
+
+  .quote-text {
+    font-size: 0.95rem;
+  }
+}
