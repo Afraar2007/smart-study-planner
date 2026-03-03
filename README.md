@@ -285,3 +285,4 @@ For issues and questions:
 ---
 
 **Happy Studying! 📚💦** Remember: Consistency beats intensity every time!
+"# smart-study-planner" 
