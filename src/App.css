@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --secondary: #06b6d4;
+  --danger: #ef4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+
+  --light-bg: #ffffff;
+  --light-bg-secondary: #f3f4f6;
+  --light-text: #1f2937;
+  --light-border: #e5e7eb;
+
+  --dark-bg: #1f2937;
+  --dark-bg-secondary: #111827;
+  --dark-text: #f3f4f6;
+  --dark-border: #374151;
+}
+
+[data-theme="light"] {
+  --bg: var(--light-bg);
+  --bg-secondary: var(--light-bg-secondary);
+  --text: var(--light-text);
+  --border: var(--light-border);
+}
+
+[data-theme="dark"] {
+  --bg: var(--dark-bg);
+  --bg-secondary: var(--dark-bg-secondary);
+  --text: var(--dark-text);
+  --border: var(--dark-border);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.theme-toggle {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.container {
+  flex: 1;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 20px;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--secondary);
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #0891b2;
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.btn-danger:hover {
+  background: #dc2626;
+}
+
+.btn-sm {
+  padding: 6px 10px;
+  font-size: 0.85rem;
+}
+
+.generate-btn {
+  width: 100%;
+  font-size: 1rem;
+}
+
+.subjects-list {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.subjects-list h3 {
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+.subjects-list ul {
+  list-style: none;
+}
+
+.subject-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: var(--bg);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  border-left: 4px solid var(--primary);
+}
+
+.subject-hours {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  margin-top: 4px;
+}
+
+.exam-info {
+  background: var(--bg-secondary);
+  padding: 12px 16px;
+  border-radius: 6px;
+  border-left: 4px solid var(--warning);
+  margin-bottom: 16px;
+}
+
+.empty-state {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background: var(--bg-secondary);
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-weight: 500;
+  text-align: center;
+  padding: 40px;
+}
+
+@media (max-width: 768px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+}
